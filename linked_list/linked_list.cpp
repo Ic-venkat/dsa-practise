@@ -40,14 +40,27 @@ class singlyLinkedList(){
     }
 
     void appendNode(Node* n){
-
-
-        Node* ptr = head;
-        while(ptr->next!=NULL){
-            ptr = ptr->next;
+        if(nodeExists(n->key!=NULL)){
+            cout<<"Node already exists with same key value"<<endl;
         }
-        ptr->next = n;
+        else{
+            if(head==NULL){
+                head = n;
+                cout<<"Node appended"<endl;
+                return;
+            }
+            else{
+                Node* ptr = head;
+                while(ptr->next!=NULL){
+                    ptr = ptr->next;
+                }
+                ptr->next = n;
+            }
+        }
+        
     }
+
+    
 }
 
 
